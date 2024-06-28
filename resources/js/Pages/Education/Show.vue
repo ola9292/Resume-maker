@@ -1,27 +1,27 @@
 <template>
     <Nav>
-        <div class="border min-h-screen flex justify-center items-center">
+        <div class="form-container">
 
-               <form @submit.prevent="submit">
+               <form @submit.prevent="submit" class="form-sub-container">
                 <div class="mb-8">
                         <h3 class="text-2xl">Edit Education</h3>
                     </div>
                     <div class="row">
-                        <div class="flex flex-col">
+                        <div class="form-item">
                             <label for="">Degree</label>
-                            <input class="border w-64 mr-4 mb-4  px-2 py-1 rounded" type="text" v-model="form.degree">
+                            <input class="" type="text" v-model="form.degree">
                             <div v-if="$page.props.errors.degree" v-text="$page.props.errors.degree" class="text-red-600 text-sm"></div>
                         </div>
-                        <div class="flex flex-col">
+                        <div class="form-item">
                             <label for="">Institution Name</label>
-                            <input class="border w-64 mr-4 mb-4 px-2 py-1 rounded" type="text" v-model="form.school">
+                            <input class="" type="text" v-model="form.school">
                             <div v-if="$page.props.errors.school" v-text="$page.props.errors.school" class="text-red-600 text-sm"></div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="flex flex-col">
+                        <div class="form-item">
                             <label for="">Graduation Year</label>
-                            <input class="border w-64 mr-4 mb-4 px-2 py-1 rounded" type="text" v-model="form.graduation_year">
+                            <input class="" type="text" v-model="form.graduation_year">
                             <div v-if="$page.props.errors.graduation_year" v-text="$page.props.errors.graduation_year" class="text-red-600 text-sm"></div>
                         </div>
                     </div>

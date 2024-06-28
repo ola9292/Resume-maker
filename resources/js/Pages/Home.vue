@@ -1,14 +1,14 @@
 <template>
     <Nav>
-        <div class="container">
-            <div class="marque">
+        <div class="home-container">
+            <div class="marque mb-6">
                 <span>'Resume' </span>
                 <span>'Top Jobs' </span>
                 <span>'New Jobs' </span>
                 <span>'Recent Postings' </span>
             </div>
-            <h1 class="text-3xl">Only 2% of resumes make it past the first round. Be in the top 2%</h1>
-            <p class="text-2xl">use proffesional field-test resume templates.</p>
+            <h1 class="text-3xl">Stand Out from the Crowd with Our Professional Resume Builder.</h1>
+            <p class="text-2xl">Unlock Your Career Potential and Be Among the Top 2%</p>
 
             <Link v-if="name" class="btn" href="/personal-details" as="button">My Profile</Link>
             <Link v-else class="btn" href="/personal-details/create" as="button">Create My Resume</Link>
@@ -27,8 +27,15 @@ import { Link } from '@inertiajs/vue3'
     }
 </script>
 <style scoped>
+.home-container{
+    max-width: 800px;
+    overflow: hidden;
+    margin: 200px auto;
+    text-align: center;
+}
     .marque{
         overflow: hidden;
+        color: #dc3545;
         animation: marq 10s linear forwards infinite;
     }
     @keyframes marq {

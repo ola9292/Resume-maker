@@ -1,39 +1,39 @@
 <template>
     <Nav>
-        <div class="border min-h-screen flex justify-center items-center">
+        <div class="form-container">
 
-               <form @submit.prevent="submit">
+               <form @submit.prevent="submit" class="form-sub-container">
                 <div class="mb-8">
                     <h3 class="text-2xl">Creat Work History</h3>
                 </div>
                     <div class="row">
-                        <div class="flex flex-col">
+                        <div class="form-item">
                             <label for="">Company Name</label>
-                            <input class="border w-64 mr-4 mb-4 py-1 rounded" type="text" v-model="form.company">
+                            <input class="" type="text" v-model="form.company">
                             <div v-if="$page.props.errors.company" v-text="$page.props.errors.company" class="text-red-600 text-sm"></div>
                         </div>
-                        <div class="flex flex-col">
+                        <div class="form-item">
                             <label for="">Position</label>
-                            <input class="border w-64 mr-4 mb-4 py-1 rounded" type="text" v-model="form.position">
+                            <input class="" type="text" v-model="form.position">
                             <div v-if="$page.props.errors.position" v-text="$page.props.errors.position" class="text-red-600 text-sm"></div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="flex flex-col">
+                        <div class="form-item">
                             <label for="">Start Year</label>
-                            <input class="border w-64 mr-4 mb-4 py-1 rounded" type="text" v-model="form.start_year">
+                            <input class="" type="text" v-model="form.start_year">
                             <div v-if="$page.props.errors.start_year" v-text="$page.props.errors.start_year" class="text-red-600 text-sm"></div>
                         </div>
-                        <div class="flex flex-col">
+                        <div class="form-item">
                             <label for="">End Year</label>
-                            <input class="border w-64 mr-4 mb-4 py-1 rounded" type="text" v-model="form.end_year">
+                            <input class="" type="text" v-model="form.end_year">
                             <div v-if="$page.props.errors.end_year" v-text="$page.props.errors.end_year" class="text-red-600 text-sm"></div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="flex flex-col">
+                        <div class="form-item-full">
                             <label for="">Duties</label>
-                            <textarea class="border mr-4 mb-4 py-1 px-4 rounded" v-model="form.duties" cols="64" rows="10"></textarea>
+                            <textarea class="" v-model="form.duties" cols="64" rows="10"></textarea>
                             <div v-if="$page.props.errors.duties" v-text="$page.props.errors.duties" class="text-red-600 text-sm"></div>
                         </div>
                     </div>

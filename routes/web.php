@@ -126,13 +126,13 @@ Route::get('/download', function () {
 // $dompdf->loadHtml('preview');
 $dompdf->loadHtml($view);
 // (Optional) Setup the paper size and orientation
-$dompdf->setPaper('A3', 'landscape');
+$dompdf->setPaper('A4', 'portrait');
 
 // Render the HTML as PDF
 $dompdf->render();
 
 // Output the generated PDF to Browser
-    $dompdf->stream('example.pdf');
+    $dompdf->stream('resume.pdf');
     // exit();
  });
 

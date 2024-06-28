@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use Inertia\Inertia;
 use App\Models\WorkHistory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class WorkHistoryController extends Controller
 {
     public function index()
     {
-        $workHistory = WorkHistory::where('user_id', 1)->get();
+        $id = Auth::user()->id;
+        $workHistory = WorkHistory::where('user_id', $id)->get();
         return Inertia::render('Work/Index',[
             'workHistory'=> $workHistory
         ]);
@@ -30,7 +32,7 @@ class WorkHistoryController extends Controller
                 'duties' => 'required'
 
             ]);
-            $data['user_id'] = 1;
+            $data['user_id'] = Auth::user()->id;
             WorkHistory::create($data);
 
             return redirect('/work-history');

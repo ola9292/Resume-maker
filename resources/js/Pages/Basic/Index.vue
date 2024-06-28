@@ -1,6 +1,7 @@
 <template>
     <Nav>
-        <div class="max-w-[700px] shadow-lg shadow-gray-500/50 border border-red-300 hover:border-green-800 rounded-lg mx-auto mt-10 p-8 bg-black/10">
+        <div class="px-2">
+            <div class="max-w-[700px] shadow-lg shadow-gray-500/50 border border-red-300 hover:border-green-800 rounded-lg mx-auto mt-10 p-8 bg-black/10">
             <div class="mb-2">
                 <p>Name: {{ user_profile.first_name }} {{ user_profile.last_name }}</p>
             </div>
@@ -31,6 +32,8 @@
                 <Link class="mt-8 border px-4 py-1 bg-black text-white" href="/education/create" as="button">Continue</Link>
             </div>
         </div>
+        </div>
+
     </Nav>
 
 </template>

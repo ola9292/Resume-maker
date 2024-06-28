@@ -1,6 +1,6 @@
 <template>
     <div class="max-w-[900px] mx-auto my-12">
-        <div class="text-center flex justify-between">
+        <div class="text-center flex justify-between px-2">
             <h3 class="text-2xl">Preview Resume</h3>
             <Link class="underline" href="/">Back Home</Link>
         </div>
@@ -11,7 +11,7 @@
                 <th></th>
             </tr>
             <tr>
-                <td>{{ userDetail.phone }} | {{ userDetail.email }} | {{ userDetail.website }} | {{ userDetail.country }}</td>
+                <td>{{ userDetail.phone }} | {{ userDetail.email }} | {{ userDetail.country }} | {{ userDetail.webiste }}</td>
             </tr>
         </table>
         <table>
@@ -51,7 +51,7 @@
                 </td>
             </tr>
         </table>
-        <div class="mt-8">
+        <div class="mt-8 pl-2">
             <a class="btn" href="/download">Download</a>
         </div>
     </div>

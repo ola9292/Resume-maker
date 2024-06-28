@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use Inertia\Inertia;
-use Illuminate\Http\Request;
 use App\Models\Education;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 class EducationController extends Controller
 {
     public function index()
     {
-        $education = Education::where('user_id', 1)->get();
+        $id = Auth::user()->id;
+        $education = Education::where('user_id', $id)->get();
         return Inertia::render('Education/Index',[
             'education'=> $education
         ]);
@@ -27,7 +30,7 @@ class EducationController extends Controller
                 'graduation_year' => 'required',
 
             ]);
-            $data['user_id'] = 1;
+            $data['user_id'] = Auth::user()->id;
             Education::create($data);
 
             return redirect('/education');

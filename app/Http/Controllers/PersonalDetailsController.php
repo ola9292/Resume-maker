@@ -31,14 +31,14 @@ class PersonalDetailsController extends Controller
                 'first_name' => 'required',
                 'last_name' => 'required',
                 'profession' => 'required',
-                'website' => 'required',
-                'email' => 'required',
+                'website' => 'nullable',
+                'email' => 'required|email',
                 'phone' => 'required',
                 'country' => 'required',
                 'city' => 'required',
                 'summary' => 'required'
             ]);
-            $data['user_id'] = 1;
+            $data['user_id'] = Auth::user()->id;
 
             PersonalDetail::create($data);
 
@@ -58,7 +58,7 @@ class PersonalDetailsController extends Controller
             'first_name' => 'required',
             'last_name' => 'required',
             'profession' => 'required',
-            'website' => 'required',
+            'website' => 'nullable',
             'email' => 'required',
             'phone' => 'required',
             'country' => 'required',

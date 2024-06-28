@@ -1,65 +1,65 @@
 <template>
     <Nav>
 
-            <div class="border min-h-screen flex justify-center items-center">
+            <div class="form-container">
 
-                <form @submit.prevent="submit">
+                <form @submit.prevent="submit" class="form-sub-container">
                     <div class="mb-8">
                         <h3 class="text-2xl">Create Profile</h3>
                     </div>
 
                     <div class="row">
-                        <div class="flex flex-col">
+                        <div class="form-item">
                             <label for="">First Name</label>
-                            <input class="border w-64 mr-4 mb-4 py-1 rounded" type="text" v-model="form.first_name">
+                            <input class="" type="text" v-model="form.first_name">
                             <div v-if="$page.props.errors.first_name" v-text="$page.props.errors.first_name" class="text-red-600 text-sm"></div>
                         </div>
-                        <div class="flex flex-col">
+                        <div class="form-item">
                             <label for="">Last Name</label>
-                            <input class="border w-64 mr-4 py-1 rounded mb-4" type="text" v-model="form.last_name">
+                            <input class="" type="text" v-model="form.last_name">
                             <div v-if="$page.props.errors.last_name" v-text="$page.props.errors.last_name" class="text-red-600 text-sm"></div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="flex flex-col">
+                        <div class="form-item">
                             <label for="">Profession</label>
-                            <input class="border w-64 mr-4 py-1 rounded" type="text" v-model="form.profession">
+                            <input class="" type="text" v-model="form.profession">
                             <div v-if="$page.props.errors.profession" v-text="$page.props.errors.profession" class="text-red-600 text-sm"></div>
                         </div>
-                        <div class="flex flex-col">
+                        <div class="form-item">
                             <label for="">Email</label>
-                            <input class="border w-64 mr-4 py-1 rounded" type="email" v-model="form.email">
+                            <input class="" type="email" v-model="form.email">
                             <div v-if="$page.props.errors.email" v-text="$page.props.errors.email" class="text-red-600 text-sm"></div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="flex flex-col">
+                        <div class="form-item">
                             <label for="">Phone</label>
-                            <input class="border w-64 mr-4 py-1 rounded" type="text" v-model="form.phone">
+                            <input class="" type="text" v-model="form.phone">
                             <div v-if="$page.props.errors.phone" v-text="$page.props.errors.phone" class="text-red-600 text-sm"></div>
                         </div>
-                        <div class="flex flex-col">
+                        <div class="form-item">
                             <label for="">Website</label>
-                            <input class="border w-64 mr-4 py-1 rounded" type="text" v-model="form.website">
+                            <input class="" type="text" v-model="form.website">
                             <div v-if="$page.props.errors.website" v-text="$page.props.errors.website" class="text-red-600 text-sm"></div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="flex flex-col">
+                        <div class="form-item">
                             <label for="">Country</label>
-                            <input class="border w-64 mr-4 py-1 rounded" type="text" v-model="form.country">
+                            <input class="" type="text" v-model="form.country">
                             <div v-if="$page.props.errors.country" v-text="$page.props.errors.country" class="text-red-600 text-sm"></div>
                         </div>
-                        <div class="flex flex-col">
+                        <div class="form-item">
                             <label for="">City</label>
-                            <input class="border w-64 mr-4 py-1 rounded" type="text" v-model="form.city">
+                            <input class="" type="text" v-model="form.city">
                             <div v-if="$page.props.errors.city" v-text="$page.props.errors.city" class="text-red-600 text-sm"></div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="flex flex-col w-full">
+                        <div class="form-item-full">
                             <label for="">Summary</label>
-                            <textarea class="border mr-4 py-1 rounded" v-model="form.summary"></textarea>
+                            <textarea class="textarea" v-model="form.summary"></textarea>
                             <div v-if="$page.props.errors.summary" v-text="$page.props.errors.summary" class="text-red-600 text-sm"></div>
                         </div>
                     </div>
@@ -105,14 +105,51 @@ import { Link } from '@inertiajs/vue3'
     padding: 100px;
     width: 1000px;
 }
+.form-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.form-sub-container{
+    width: 800px;
+    padding: 0 20px;
+}
 .row{
     display: flex;
     justify-content: space-between;
-    /* border w-64 mr-4: 1px solid black; */
+    flex-wrap: wrap;
+
+    margin-bottom: 10px;
+}
+input, textarea{
+    border: 1px solid #dc3545;
+    padding: 15px 6px;
+
+}
+.form-item{
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+}
+.form-item-full{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 .col{
     display: flex;
     flex-direction: column;
     width: 40%;
+}
+@media only screen and (max-width: 600px) {
+ .row{
+    flex-direction: column;
+ }
+ .form-item{
+    width: 100%;
+}
 }
 </style>

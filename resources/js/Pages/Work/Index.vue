@@ -2,7 +2,7 @@
     <Nav>
 
         <div class="max-w-[1000px] border rounded-lg mx-auto mt-10 p-8">
-            <div class="flex justify-between mb-4">
+            <div class="flex justify-between flex-wrap mb-4">
                 <h3 class="text-2xl">Your Work Summary</h3>
                 <Link class="bg-purple-600 px-4 py-1 text-white" href="/work-history/create" as="button">Add More</Link>
             </div>
@@ -33,7 +33,7 @@
 
         </div>
 
-        <div class="flex justify-between mt-4">
+        <div class="flex flex-wrap gap-y-4 justify-between mt-4">
                 <Link class="bg-green-600 px-4 py-1 text-white" href="/education">Go back to Education Summary</Link>
             <Link class="bg-blue-600 px-4 py-1 text-white" href="/preview" as="button">Preview Your Resume</Link>
             </div>
