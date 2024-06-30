@@ -113,6 +113,10 @@ import { Link } from '@inertiajs/vue3'
     align-items: center;
 
 }
+.form-sub-container-small{
+    padding: 0 20px;
+    width: 800px;
+}
 .form-sub-container{
     width: 800px;
     padding: 0 20px;
@@ -121,7 +125,6 @@ import { Link } from '@inertiajs/vue3'
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-
     margin-bottom: 10px;
 }
 input, textarea{

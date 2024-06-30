@@ -33,7 +33,7 @@
                     <div class="row">
                         <div class="form-item-full">
                             <label for="">Duties</label>
-                            <textarea class="" v-model="form.duties" cols="64" rows="10"></textarea>
+                            <textarea class="" v-model="form.duties"></textarea>
                             <div v-if="$page.props.errors.duties" v-text="$page.props.errors.duties" class="text-red-600 text-sm"></div>
                         </div>
                     </div>
