@@ -44,6 +44,7 @@
                             <div v-if="$page.props.errors.website" v-text="$page.props.errors.website" class="text-red-600 text-sm"></div>
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="form-item">
                             <label for="">Country</label>
@@ -56,6 +57,15 @@
                             <div v-if="$page.props.errors.city" v-text="$page.props.errors.city" class="text-red-600 text-sm"></div>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="form-item-full">
+                            <label for="">Skills(separate with comma)</label>
+                            <input class="" type="text" v-model="form.skills" placeholder="Java, Laravel, Scss">
+                            <div v-if="$page.props.errors.skills" v-text="$page.props.errors.skills" class="text-red-600 text-sm"></div>
+                        </div>
+                    </div>
+
                     <div class="row">
                         <div class="form-item-full">
                             <label for="">Summary</label>
@@ -88,7 +98,8 @@ import { Link } from '@inertiajs/vue3'
                         phone:'',
                         website:'',
                         country:'',
-                        city:''
+                        city:'',
+                        skills:'',
                     }
 
                 }
@@ -115,7 +126,7 @@ import { Link } from '@inertiajs/vue3'
 }
 .form-sub-container-small{
     padding: 0 20px;
-    width: 800px;
+    width: 500px;
 }
 .form-sub-container{
     width: 800px;

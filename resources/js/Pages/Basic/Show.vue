@@ -54,6 +54,15 @@
                             <div v-if="$page.props.errors.city" v-text="$page.props.errors.city" class="text-red-600 text-sm"></div>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="form-item-full">
+                            <label for="">Skills(separate with comma)</label>
+                            <input class="" type="text" v-model="form.skills" placeholder="Java, Laravel, Scss">
+                            <div v-if="$page.props.errors.skills" v-text="$page.props.errors.skills" class="text-red-600 text-sm"></div>
+                        </div>
+                    </div>
+
                     <div class="row">
                         <div class="form-item-full">
                             <label for="">Summary</label>
@@ -90,7 +99,8 @@ import { Link } from '@inertiajs/vue3'
                         website:this.user_profile.website,
                         country:this.user_profile.country,
                         city:this.user_profile.city,
-                        summary:this.user_profile.summary
+                        summary:this.user_profile.summary,
+                        skills:this.user_profile.skills
                     }
 
                 }

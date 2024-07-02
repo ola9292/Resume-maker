@@ -21,6 +21,9 @@
                 <p>Country: {{ user_profile.country }}</p>
             </div>
             <div class="mb-2">
+                <p>Skills: {{ user_profile.skills }}</p>
+            </div>
+            <div class="mb-2">
                 <p>Summary</p>
                 <p>{{ user_profile.summary }}</p>
             </div>

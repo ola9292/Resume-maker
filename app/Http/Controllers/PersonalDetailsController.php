@@ -36,7 +36,8 @@ class PersonalDetailsController extends Controller
                 'phone' => 'required',
                 'country' => 'required',
                 'city' => 'required',
-                'summary' => 'required'
+                'summary' => 'required',
+                'skills' => 'required'
             ]);
             $data['user_id'] = Auth::user()->id;
 
@@ -63,7 +64,8 @@ class PersonalDetailsController extends Controller
             'phone' => 'required',
             'country' => 'required',
             'city' => 'required',
-            'summary' => 'required'
+            'summary' => 'required',
+            'skills' => 'required'
         ]);
         $user_profile = PersonalDetail::findOrFail($id);
         $user_profile->update($data);

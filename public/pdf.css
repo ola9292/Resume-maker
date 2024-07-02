@@ -1,0 +1,54 @@
+body{
+    font-family: sans-serif;
+
+}
+.caps{
+    text-transform: capitalize;
+}
+.upper{
+    text-transform: uppercase;
+}
+.resume-main-container{
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 0 20px;
+}
+.personal-details > h1{
+    margin-bottom: 0;
+    padding: 0;
+}
+.personal-details > h4{
+    margin: 0;
+    padding: 0;
+}
+.personal-details > p, .summary > p{
+    margin-top: 4px;
+    padding: 0;
+}
+.colored{
+    color: #66c2ff;
+}
+.heading{
+    text-transform: uppercase;
+    border-bottom: 2px solid gray;
+    margin-bottom: 10px;
+}
+.work-card{
+    margin-bottom: 40px;
+}
+.work-card > h4, .work-card > p{
+    margin: 4px 0;
+    padding: 0;
+}
+.duties{
+    padding-left: 1.5rem;
+    list-style-type: circle;
+}
+.education-card{
+    margin-bottom: 20px;
+}
+.education-card > p, .education-card > h4{
+    margin: 4px 0;
+}

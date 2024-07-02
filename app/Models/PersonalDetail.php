@@ -19,6 +19,7 @@ class PersonalDetail extends Model
         'profession',
         'country',
         'city',
-        'summary'
+        'summary',
+        'skills'
     ];
 }

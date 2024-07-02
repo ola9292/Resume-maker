@@ -97,11 +97,11 @@ Route::get('/test', function(){
     $educationData = Auth::user()->load('education');
     $education = $educationData->education;
 
-    $workHistoryData =Auth::user()->load('workHistory');
+    $workHistoryData = Auth::user()->load('workHistory');
     $workHistory = $workHistoryData->workHistory;
     // dd($userDetail);
     $dompdf = new Dompdf();
-   return view('preview',[
+   return view('test',[
         'userDetail' => $userDetail,
         'education' => $education,
         'workHistory' => $workHistory

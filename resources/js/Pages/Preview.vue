@@ -11,7 +11,7 @@
                 <th></th>
             </tr>
             <tr>
-                <td>{{ userDetail.phone }} | {{ userDetail.email }} | {{ userDetail.country }} | {{ userDetail.webiste }}</td>
+                <td>{{ userDetail.phone }} | {{ userDetail.email }} | {{ userDetail.country }} | {{ userDetail.website }}</td>
             </tr>
         </table>
         <table>
@@ -22,6 +22,16 @@
             </tr>
             <tr>
                 <td>{{ userDetail.summary }}</td>
+            </tr>
+        </table>
+        <table>
+            <tr class="border-b">
+                <th>SKILLS</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>{{ userDetail.skills }}</td>
             </tr>
         </table>
         <table>
