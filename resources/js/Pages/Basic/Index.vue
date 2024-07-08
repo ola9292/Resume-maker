@@ -1,31 +1,32 @@
 <template>
     <Nav>
-        <div class="px-2">
+        <div class="px-2" v-if="user_profile != null">
             <div class="max-w-[700px] shadow-lg shadow-gray-500/50 border border-red-300 hover:border-green-800 rounded-lg mx-auto mt-10 p-8 bg-black/10">
-            <div class="mb-2">
-                <p>Name: {{ user_profile.first_name }} {{ user_profile.last_name }}</p>
-            </div>
-            <div class="mb-2">
-                <p>Email: {{ user_profile.email }}</p>
-            </div>
-            <div class="mb-2">
-                <p>Profession: {{ user_profile.profession }}</p>
-            </div>
-            <div class="mb-2">
-                <p>Contact: {{ user_profile.phone }}</p>
-            </div>
-            <div class="mb-2">
-                <p>Website: {{ user_profile.website }}</p>
-            </div>
-            <div class="mb-2">
-                <p>Country: {{ user_profile.country }}</p>
-            </div>
-            <div class="mb-2">
-                <p>Skills: {{ user_profile.skills }}</p>
-            </div>
-            <div class="mb-2">
-                <p>Summary</p>
-                <p>{{ user_profile.summary }}</p>
+                <div class="mb-2">
+                    <p>Name: {{ user_profile.first_name }} {{ user_profile.last_name }}</p>
+                </div>
+                <div class="mb-2">
+                    <p>Email: {{ user_profile.email }}</p>
+                </div>
+                <div class="mb-2">
+                    <p>Profession: {{ user_profile.profession }}</p>
+                </div>
+                <div class="mb-2">
+                    <p>Contact: {{ user_profile.phone }}</p>
+                </div>
+                <div class="mb-2">
+                    <p>Website: {{ user_profile.website }}</p>
+                </div>
+                <div class="mb-2">
+                    <p>Country: {{ user_profile.country }}</p>
+                </div>
+                <div class="mb-2">
+                    <p>Skills: {{ user_profile.skills }}</p>
+                </div>
+                <div class="mb-2">
+                    <p>Summary</p>
+                    <p>{{ user_profile.summary }}</p>
+                </div>
             </div>
 
 
@@ -35,8 +36,9 @@
                 <Link class="mt-8 border px-4 py-1 bg-black text-white" href="/education/create" as="button">Continue</Link>
             </div>
         </div>
+        <div v-else>
+                <p class="p-10">You have no person details record! <Link class="underline text-red-500" href="/personal-details/create">create one</Link> </p>
         </div>
-
     </Nav>
 
 </template>

@@ -4,9 +4,12 @@
         <div class="max-w-[1000px] border rounded-lg mx-auto mt-10 p-8">
             <div class="flex justify-between flex-wrap mb-4">
                 <h3 class="text-2xl">Your Work Summary</h3>
-                <Link class="bg-purple-600 px-4 py-1 text-white" href="/work-history/create" as="button">Add More</Link>
+                <Link class="bg-purple-600 px-4 py-1 text-white" href="/work-history/create" as="button">
+                    <span v-if="workHistory != ''">Add More</span>
+                    <span v-else>Create Work</span>
+                </Link>
             </div>
-            <div class="flex flex-col rounded-lg gap-8">
+            <div class="flex flex-col rounded-lg gap-8" v-if="workHistory != ''">
                 <div class="bg-black/10 p-4 shadow-lg shadow-gray-500/50 rounded border border-red-300 hover:border-green-800" v-for="work in workHistory" :key="work.id">
                     <div class="mb-2">
                     <p>Company Name: {{ work.company }}</p>
@@ -24,21 +27,19 @@
                         <p>Website: {{ work.end_year }}</p>
                     </div>
                     <div class="flex justify-between items-center">
-                    <Link class="border px-4 py-1 bg-black text-white" :href="'/work-history/edit/' + work.id" as="button">Edit</Link>
-                    <Link class="border px-4 py-1 bg-red-700 text-white" :href="'/work-history/delete/' + work.id" method="delete" as="button">Delete</Link>
-
+                        <Link class="border px-4 py-1 bg-black text-white" :href="'/work-history/edit/' + work.id" as="button">Edit</Link>
+                        <Link class="border px-4 py-1 bg-red-700 text-white" :href="'/work-history/delete/' + work.id" method="delete" as="button">Delete</Link>
+                    </div>
                 </div>
             </div>
-
-
-        </div>
-
-        <div class="flex flex-wrap gap-y-4 justify-between mt-4">
-                <Link class="bg-green-600 px-4 py-1 text-white" href="/education">Go back to Education Summary</Link>
-            <Link class="bg-blue-600 px-4 py-1 text-white" href="/preview" as="button">Preview Your Resume</Link>
+            <div v-else>
+                <p>You have no work history! <Link class="underline text-red-500" href="/work-history/create">create one</Link></p>
             </div>
 
-
+            <div class="flex flex-wrap gap-y-4 justify-between mt-4">
+                    <Link class="bg-green-600 px-4 py-1 text-white" href="/education">Go back to Education Summary</Link>
+                    <Link v-if="workHistory != ''" class="bg-blue-600 px-4 py-1 text-white" href="/preview" as="button">Preview Your Resume</Link>
+            </div>
         </div>
     </Nav>
 
