@@ -121,51 +121,57 @@ body{
 
 </style>
 <body>
+    {{-- {{dd($education)}} --}}
     <div class="resume-main-container">
-        <div class="personal-details">
-            <h1>{{ strtoupper($userDetail['first_name']) }} {{ strtoupper($userDetail['last_name']) }}</h1>
-            <h4 class="colored">{{ $userDetail['profession'] }}</h4>
-            <p><i class="fa-solid fa-phone"></i> {{ $userDetail['phone'] }} |<i class="fa-solid fa-at"></i> {{ $userDetail['email'] }} |<i class="fa-solid fa-earth-americas"></i> {{ $userDetail['country'] }} | {{ $userDetail['website'] }}</p>
-        </div>
-        <div class="summary">
-            <h3 class="heading">SUMMARY</h3>
-            <p>{{ $userDetail['summary'] }}</p>
-        </div>
-        <div class="summary">
-            <h3 class="heading">Technical Skills</h3>
-            <p>{{ $userDetail['skills'] }}</p>
-        </div>
-        <div class="work-history">
-            <h3 class="heading">Experience</h3>
-            @foreach ($workHistory as $work)
-            <div class="work-card">
-                <h4 class="caps">{{ $work['position'] }}</h4>
-                <p class="colored caps">{{ $work['company'] }}</p>
-                <p>{{ $work['start_year'] }} - {{ $work['end_year'] }}</p>
-                @if(!empty($work['duties']))
-                    <ul class="duties" style="">
-                        @foreach (explode("\n", $work['duties']) as $duty)
-                            @if (trim($duty) !== '')
-                                <li>{{ $duty }}</li>
-                            @endif
-                        @endforeach
-                    </ul>
-                @endif
+        @if($userDetail != null)
+            <div class="personal-details">
+                <h1>{{ strtoupper($userDetail['first_name']) }} {{ strtoupper($userDetail['last_name']) }}</h1>
+                <h4 class="colored">{{ $userDetail['profession'] }}</h4>
+                <p><i class="fa-solid fa-phone"></i> {{ $userDetail['phone'] }} |<i class="fa-solid fa-at"></i> {{ $userDetail['email'] }} |<i class="fa-solid fa-earth-americas"></i> {{ $userDetail['country'] }} | {{ $userDetail['website'] }}</p>
             </div>
-
-            @endforeach
-        </div>
-        <div class="education">
-            <h3 class="heading">Education</h3>
-            @foreach ($education as $edu)
-                <div class="education-card">
-                    <h4 class="caps">{{ $edu['degree'] }}</h4>
-                    <p class="colored">{{ $edu['school'] }}</p>
-                    <p> {{ $edu['graduation_year'] }}</p>
-
+            <div class="summary">
+                <h3 class="heading">SUMMARY</h3>
+                <p>{{ $userDetail['summary'] }}</p>
+            </div>
+            <div class="summary">
+                <h3 class="heading">Technical Skills</h3>
+                <p>{{ $userDetail['skills'] }}</p>
+            </div>
+        @endif
+        @if(count($workHistory) > 0)
+            <div class="work-history">
+                <h3 class="heading">Experience</h3>
+                @foreach ($workHistory as $work)
+                <div class="work-card">
+                    <h4 class="caps">{{ $work['position'] }}</h4>
+                    <p class="colored caps">{{ $work['company'] }}</p>
+                    <p>{{ $work['start_year'] }} - {{ $work['end_year'] }}</p>
+                    @if(!empty($work['duties']))
+                        <ul class="duties" style="">
+                            @foreach (explode("\n", $work['duties']) as $duty)
+                                @if (trim($duty) !== '')
+                                    <li>{{ $duty }}</li>
+                                @endif
+                            @endforeach
+                        </ul>
+                    @endif
                 </div>
-            @endforeach
-        </div>
+                @endforeach
+            </div>
+        @endif
+        @if(count($education) > 0)
+            <div class="education">
+                <h3 class="heading">Education</h3>
+                @foreach ($education as $edu)
+                    <div class="education-card">
+                        <h4 class="caps">{{ $edu['degree'] }}</h4>
+                        <p class="colored">{{ $edu['school'] }}</p>
+                        <p> {{ $edu['graduation_year'] }}</p>
+
+                    </div>
+                @endforeach
+            </div>
+        @endif
     </div>
 </body>
 </html>

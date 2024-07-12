@@ -4,7 +4,7 @@
             <h3 class="text-2xl">Preview Resume</h3>
             <Link class="underline" href="/">Back Home</Link>
         </div>
-        <table>
+        <table v-if="userDetail != null">
             <tr>
                 <th class="text-3xl">{{ userDetail.first_name.toUpperCase() }} {{ userDetail.last_name.toUpperCase() }}</th>
                 <th></th>
@@ -14,7 +14,7 @@
                 <td>{{ userDetail.phone }} | {{ userDetail.email }} | {{ userDetail.country }} | {{ userDetail.website }}</td>
             </tr>
         </table>
-        <table>
+        <table v-if="userDetail != null">
             <tr class="border-b">
                 <th>SUMMARY</th>
                 <th></th>
@@ -24,7 +24,7 @@
                 <td>{{ userDetail.summary }}</td>
             </tr>
         </table>
-        <table>
+        <table v-if="userDetail != null">
             <tr class="border-b">
                 <th>SKILLS</th>
                 <th></th>
@@ -34,7 +34,7 @@
                 <td>{{ userDetail.skills }}</td>
             </tr>
         </table>
-        <table>
+        <table v-if="workHistory.length != 0">
             <tr class="border-b">
                 <th>PROFFESSIONAL EXPERIENCE</th>
             </tr>
@@ -49,7 +49,7 @@
                 </td>
             </tr>
         </table>
-        <table>
+        <table v-if="education.length != 0">
             <tr class="border-b">
                 <th>EDUCATION</th>
             </tr>
@@ -83,6 +83,8 @@ export default{
     },
     created(){
         console.log(this.workHistory)
+        console.log(this.education)
+        console.log(this.userDetail)
     }
 }
 </script>
