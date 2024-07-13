@@ -27,14 +27,13 @@
                     <p>Summary</p>
                     <p>{{ user_profile.summary }}</p>
                 </div>
-            </div>
-
-
-
-            <div class="flex justify-between items-center">
+                <div class="flex justify-between items-center">
                 <Link class="mt-8 border px-4 py-1 bg-green-600 text-white" :href="'/personal-details/edit/' + user_profile.id" as="button">Edit</Link>
                 <Link class="mt-8 border px-4 py-1 bg-black text-white" href="/education/create" as="button">Continue</Link>
             </div>
+            </div>
+
+
         </div>
         <div v-else>
                 <p class="p-10">You have no person details record! <Link class="underline text-red-500" href="/personal-details/create">create one</Link> </p>
